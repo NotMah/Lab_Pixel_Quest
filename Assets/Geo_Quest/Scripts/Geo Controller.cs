@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GeoController : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class GeoController : MonoBehaviour
     private int var1 = 51;
     private Rigidbody2D rb;
     public int speed = 5;
-
+    public string nextLevel = "Game 1";
     // Start is called before the first frame update
     void Start()
 
@@ -52,4 +53,31 @@ public class GeoController : MonoBehaviour
         } 
       */
     }
-}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Hit");
+
+        switch (collision.tag)
+        {
+            case "Death":
+                {
+                    Debug.Log("D");
+                    
+                      string thisLevel = SceneManager .GetActiveScene().name;   
+                            SceneManager.LoadScene(thisLevel);
+                    break;
+
+                }
+
+            case "Finish":
+                {
+                    SceneManager.LoadScene(nextLevel);
+                    break;
+                }
+
+                }
+        }
+    }
+
+        
