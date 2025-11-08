@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal > 0) { _spriteRenderer.flipX = true; }
         else if (horizontal < 0) { _spriteRenderer.flipX = false;}
 
-        if (Input.GetKeyDown(KeyCode.Space) && _groundC
+        //if (Input.GetKeyDown(KeyCode.Space) && _groundC
 
     }
 }
